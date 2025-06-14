@@ -2,23 +2,57 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>TimeTracker 고객 지원</title>
+  <title>TimeTracker 고객 지원 | Customer Support</title>
   <style>
     body { font-family: sans-serif; margin: 2rem; line-height: 1.6; }
     h1 { color: #333; }
     h2 { margin-top: 2rem; }
+
+    .lang-ko, .lang-en { display: none; } /* 기본 감춤 */
+    .show-ko .lang-ko { display: block; }
+    .show-en .lang-en { display: block; }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const userLang = navigator.language || navigator.userLanguage;
+      const root = document.documentElement;
+      if (userLang.startsWith("ko")) {
+        root.classList.add("show-ko");
+      } else {
+        root.classList.add("show-en");
+      }
+    });
+  </script>
 </head>
 <body>
-  <h1>TimeTracker 고객 지원</h1>
+  <h1>
+    <span class="lang-ko">TimeTracker 고객 지원</span>
+    <span class="lang-en">TimeTracker Customer Support</span>
+  </h1>
 
-  <h2>자주 묻는 질문</h2>
-  <ul>
-    <li><strong>Q:</strong> 알람이 울리지 않아요.<br><strong>A:</strong> 앱의 알림 권한이 켜져 있는지 확인해주세요.</li>
-    <li><strong>Q:</strong> 도시를 추가할 수 없어요.<br><strong>A:</strong> 인터넷 연결 상태를 확인한 후 다시 시도해주세요.</li>
-  </ul>
+  <h2>
+    <span class="lang-ko">자주 묻는 질문</span>
+    <span class="lang-en">Frequently Asked Questions</span>
+  </h2>
 
-  <h2>문의하기</h2>
-  <p>이메일: hyer1k@naver.com</p>
+  <div class="qa">
+    <p class="lang-ko"><strong>Q:</strong> 알람이 울리지 않아요.<br><strong>A:</strong> 앱의 알림 권한이 켜져 있는지 확인해주세요.</p>
+    <p class="lang-en"><strong>Q:</strong> My alarm didn’t go off.<br><strong>A:</strong> Please make sure notification permissions are enabled for the app.</p>
+  </div>
+
+  <div class="qa">
+    <p class="lang-ko"><strong>Q:</strong> 도시를 추가할 수 없어요.<br><strong>A:</strong> 인터넷 연결 상태를 확인한 후 다시 시도해주세요.</p>
+    <p class="lang-en"><strong>Q:</strong> I can't add a city.<br><strong>A:</strong> Please check your internet connection and try again.</p>
+  </div>
+
+  <h2>
+    <span class="lang-ko">문의하기</span>
+    <span class="lang-en">Contact</span>
+  </h2>
+
+  <p>
+    <span class="lang-ko"><strong>이메일:</strong> hyer1k@naver.com</span>
+    <span class="lang-en"><strong>Email:</strong> hyer1k@naver.com</span>
+  </p>
 </body>
 </html>
